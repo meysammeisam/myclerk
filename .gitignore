@@ -11,3 +11,12 @@
 /log/*
 !/log/.keep
 /tmp
+
+config/database.yml
+config/secrets.yml
+
+# prevent 'git conflict generated files' to add by mistake
+*.orig
+
+# Ignore all ~ files
+*~
