@@ -46,3 +46,5 @@ group :development do
   gem 'binding_of_caller'
 end
 
+# Engines
+gem 'clerk_first', :path => 'engines/clerk_first'
