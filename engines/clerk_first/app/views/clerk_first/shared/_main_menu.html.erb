@@ -1,12 +1,14 @@
 <% if menu_type == :top_main_menu %>
   <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
     <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-      <a class="mdl-navigation__link is-active" href="index.html">Home</a>
+      <%= link_to "Home", root_path, :class => 'mdl-navigation__link is-active'  %>
       <a class="mdl-navigation__link" href="about.html">About</a>
       <a class="mdl-navigation__link" href="contact.html">Contact</a>
-      <%= link_to "my Clerk", new_user_session_path, :class => 'mdl-navigation__link'  %>
       <% unless user_signed_in? %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
+        <%= link_to "my Clerk", sign_in_path, :class => 'mdl-navigation__link'  %>
+        <%= link_to "Sign up", sign_up_path, :class => 'mdl-navigation__link'  %>
+      <% else %>
+        <%= link_to "Logout", sign_out_path, :method => :delete, :class => 'mdl-navigation__link' %>
       <% end %>
     </nav>
   </div>

@@ -1,0 +1,40 @@
+<div class="mdl-grid portfolio-max-width portfolio-contact">
+  <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Sign up</h2>
+    </div>
+
+    <div class="mdl-card__supporting-text">
+      <%= form_for(resource, as: resource_name, url: sign_up_path) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
+          <%= f.text_field :username, autofocus: true, :class => 'mdl-textfield__input' %>
+          <%= f.label :username, :class => 'mdl-textfield__label' %>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
+          <%= f.email_field :email, :class => 'mdl-textfield__input' %>
+          <%= f.label :email, :class => 'mdl-textfield__label' %>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <% if false#@minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+          <% end %>
+          <%= f.password_field :password, autocomplete: "off", :class => 'mdl-textfield__input' %>
+          <%= f.label :password, :class => 'mdl-textfield__label' %>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'mdl-textfield__input' %>
+          <%= f.label :password_confirmation, :class => 'mdl-textfield__label' %>
+        </div>
+
+        <p>
+          <%= f.submit "Sign up", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

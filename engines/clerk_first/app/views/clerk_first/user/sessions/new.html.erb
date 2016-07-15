@@ -1,0 +1,38 @@
+<div class="mdl-grid portfolio-max-width portfolio-contact">
+  <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Log In</h2>
+    </div>
+
+    <div class="mdl-card__supporting-text">
+
+      <%= form_for(resource, as: resource_name, url: sign_in_path) do |f| %>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
+          <%#= f.text_field :username, autofocus: true, :class => 'mdl-textfield__input' %>
+          <%#= f.label :username, :class => 'mdl-textfield__label' %>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded">
+          <%= f.email_field :email, autofocus: true, :class => 'mdl-textfield__input' %>
+          <%= f.label :email, :class => 'mdl-textfield__label' %>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= f.password_field :password, autocomplete: "off", :class => 'mdl-textfield__input' %>
+          <%= f.label :password, :class => 'mdl-textfield__label' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <label class="mdl-checkbox mdl-js-checkbox" for="user_remember_me">
+            <%= f.check_box :remember_me, :class => 'mdl-checkbox__input' %>
+            <span class="mdl-checkbox__label">Checkbox</span>
+          </label>
+          <br/><br/>
+        <% end %>
+        <p>
+          <%= f.submit "Log in", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
