@@ -1,5 +1,5 @@
-#Rails.application.routes.draw do
 Myclerk::Application.routes.draw do
+  devise_for :users
   mount ClerkFirst::Engine => '/' ,:as => 'clerk_first'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

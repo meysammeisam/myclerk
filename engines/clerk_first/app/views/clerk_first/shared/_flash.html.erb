@@ -1,0 +1,33 @@
+<section class="wrapper flash-messages">
+  <div class="row">
+    <div class="col-lg-12">
+      <% if flash[:alert] %>
+        <div class="alert alert-block alert-danger in">
+          <button class="close close-sm" type="button" data-dismiss="alert">
+            <i class="fa fa-times"></i>
+          </button>
+          <strong><%= flash[:alert] %></strong>
+        </div>
+        <% flash[:alert] = nil %>
+      <% end %>
+      <% if flash[:notice] %>
+        <div class="alert alert-block alert-warning in">
+          <button class="close close-sm"  type="button"  data-dismiss="alert">
+            <i class="fa fa-times"></i>
+          </button>
+          <strong><%= flash[:notice] %></strong>
+        </div>
+        <% flash[:notice] = nil %>
+      <% end %>
+      <% if flash[:success] %>
+        <div class="alert alert-block alert-success in">
+          <button class="close close-sm" type="button" data-dismiss="alert">
+            <i class="fa fa-times"></i>
+          </button>
+          <strong><%= flash[:success] %></strong>
+        </div>
+        <% flash[:success] = nil %>
+      <% end %>
+    </div>
+  </div>
+</section>
