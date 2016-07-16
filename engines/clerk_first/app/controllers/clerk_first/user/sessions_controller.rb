@@ -1,3 +1,5 @@
+require_dependency "clerk_first/application_controller"
+
 module ClerkFirst
   class User::SessionsController < Devise::SessionsController
 
